@@ -5,10 +5,9 @@ const Footer = ({ darckMode }) => {
 
     return (
         <AllConFooter darckMode={darckMode}>
-            <H3>Trabaja con nosotros</H3>
-            <H3>Términos y condiciones</H3>
-            <H3>Ayuda y asistencia</H3>
-
+            <H3>Work With Us</H3>
+            <H3>Terms and Conditions</H3>
+            <H3>Help and support</H3>
         </AllConFooter>
     )
 }

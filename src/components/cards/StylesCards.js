@@ -83,6 +83,7 @@ export const Button = styled.button`
     &:hover{
       background: linear-gradient(to bottom,#64cd84 5%,#429d49 100%);
     background-color: #04f700;
+    color: #fff;
     }
 `
 export const SpanPrice = styled.h2`

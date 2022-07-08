@@ -35,7 +35,7 @@ const Navbar = () => {
         <NavbarCon>
             <ContainerAll open={click}>
                 <Linke to="/">Home</Linke>
-                <Anchor href="http://juanca.herokuapp.com/" target="_blank" rel="noopener noreferrer">Contáctanos</Anchor>
+                <Anchor href="http://juanca.herokuapp.com/" target="_blank" rel="noopener noreferrer">Contact</Anchor>
                 <DivDropDown>
                     <ButtonDrop onClick={() => ChangeDrop()}>Categories<BsArrowDownShort size="28px" /></ButtonDrop>
                     <Ul visible={dropDown}>

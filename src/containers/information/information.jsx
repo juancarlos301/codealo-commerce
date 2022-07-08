@@ -27,33 +27,33 @@ const Information = () => {
                 <InformationCon>
                     <ContainerA>
                         <div>
-                            <H2>Informacion de Contacto</H2>
+                            <H2>Contact Information</H2>
                         </div>
                         <div className="formulario">
                             <form ref={form}>
-                                <Input type="text" placeholder="Nombre Completo" name="name" />
-                                <Input type="email" placeholder="correo electronico" name="email" />
+                                <Input type="text" placeholder="Name" name="name" />
+                                <Input type="email" placeholder="Email" name="email" />
                                 <Input type="text" placeholder="apto" name="apto" />
-                                <Input type="text" placeholder="ciudad" name="city" />
-                                <Input type="text" placeholder="pais" name="country" />
-                                <Input type="text" placeholder="departamento" name="state" />
-                                <Input type="text" placeholder="codigo postal" name="cp" />
-                                <Input type="text" placeholder="telefono" name="phone" />
+                                <Input type="text" placeholder="City" name="city" />
+                                <Input type="text" placeholder="State" name="country" />
+                                <Input type="text" placeholder="department" name="state" />
+                                <Input type="text" placeholder="Postal Code" name="cp" />
+                                <Input type="text" placeholder="Phone Number" name="phone" />
                             </form>
                         </div>
                         <ConButtons>
                             <div >
                                 <Linked to="/checkout">
-                                    regresar
+                                    To return
                                 </Linked>
                             </div>
                             <ButtonBuy onClick={HandleSubmit}>
-                                pagar
+                                Buy
                             </ButtonBuy>
                         </ConButtons>
                     </ContainerA>
                     <SlideBar>
-                        <H2>{car.length > 0 ? "Pedido" : "No Tienes Ningún Pedido :("}</H2>
+                        <H2>{car.length > 0 ? "Order" : "You Haven't Orders :("}</H2>
 
                         {car.map((item) => (
                             <InfoItem key={item.id}>

@@ -66,6 +66,7 @@ export const ButtonBar = styled.div`
   &:hover{
       background: linear-gradient(to bottom,#64cd84 5%,#429d49 100%);
     background-color: #04f700;
+    color: #fff
     }
 `
 export const H2 = styled.h2`

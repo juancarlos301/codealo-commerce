@@ -21,9 +21,8 @@ const Success = () => {
                 <AllConSuccess>
                     <DivWords>
                         <ConWord>
-
-                            <H2>Gracias por tu compra!!</H2>
-                            <Span>tu pedido llegará en 3 días a la dirección que elejiste</Span>
+                            <H2>Thanks for Buying!!</H2>
+                            <Span>Your order will arrive in 3 days to the address you chose</Span>
                         </ConWord>
                     </DivWords>
                 </AllConSuccess>

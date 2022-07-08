@@ -44,7 +44,7 @@ export const Cards = ({ name, image, createItemShop, character, price, category 
             </DivPrice>
             <Span darckMode={darckMode}>{Price}</Span>
             <H3 darckMode={darckMode}>{name}</H3>
-            <Button type="Button" onClick={() => createItemShop(character)}>Comprar</Button>
+            <Button type="Button" onClick={() => createItemShop(character)}>Buy Now</Button>
 
             {
                 openModal && (<Modal>

@@ -20,8 +20,8 @@ const Checkout = () => {
             <AllContainer darckMode={darckMode}>
                 <CheckoutCon darckMode={darckMode} >
                     <div>
-                        <H2 darckMode={darckMode}>Lista de pedidos</H2>
-                        {car.length > 0 ? " " : <h5>usted no tiene pedidos :(</h5>}
+                        <H2 darckMode={darckMode}>Order List</H2>
+                        {car.length > 0 ? " " : <h5>You Haven't Orders :(</h5>}
                         {car.map((character) => (<ItemCheck key={character.id}>
                             <ElementCheck darckMode={darckMode}>
                                 <H4 darckMode={darckMode}>{character.title}</H4>
@@ -31,7 +31,7 @@ const Checkout = () => {
                         </ItemCheck>))}
                     </div>
                     <div>
-                        <H3 darckMode={darckMode}>Total a Pagar: ${view}</H3>
+                        <H3 darckMode={darckMode}>Total to pay: ${view}</H3>
 
 
                         {car.length > 0 ? (<Link to="/checkout/information">
@@ -39,7 +39,7 @@ const Checkout = () => {
                         </Link>)
                             : (
                                 <Link to="/">
-                                    <ButtonBar type="button">Volver a Home</ButtonBar>
+                                    <ButtonBar type="button">Return to Home</ButtonBar>
                                 </Link>
                             )}
                     </div>
