@@ -34,7 +34,6 @@ export const Image = styled.img`
   width: 250px;
   height: 250px;
   cursor: pointer;
-
 `
 export const H3 = styled.h3`
   color: ${props => props.darckMode ? '#fff' : '#000'};

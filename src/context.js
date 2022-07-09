@@ -1,4 +1,4 @@
-import React, { createContext, useState, useMemo } from "react";
+import React, { createContext, useState, useMemo, useEffect } from "react";
 import UseCharacters from './hooks/UseCharacters'
 import { AllCategories } from "./hooks/UseCharacters";
 const AppContext = createContext(null);
@@ -14,6 +14,10 @@ export const AppProvider = ({ children }) => {
     const category = AllCategories()
     //busqueda a la api y filtro de busqueda
     const [search, setSearch] = useState('')
+    //state de cantidad del carrito
+    const [productLength, setProductsLength] = useState(0)
+    //states de usuario
+    const [register, setRegister] = useState(false)
 
     const FiltedRedUers = useMemo(() =>
         characters.filter((user) => {
@@ -22,26 +26,41 @@ export const AppProvider = ({ children }) => {
         [characters, search])
 
 
-    const viewAllPrice = () => {
-        if (car.length === 0) {
-            return 0
-        } else {
-            let newPrice = []
-            for (let i = 0; i < car.length; i++) {
-                const view = newPrice.concat(car[i].price)
-                newPrice = view
-            }
-            const sumPrice = newPrice.reduce((a, b) => a + b)
-            const makeString = sumPrice.toString()
-            const result = makeString.substring(0, 4)
-            return result
-        }
-    }
-
-    const view = viewAllPrice()
 
     //carritos
 
+    function createItemShop(character) {
+        const inCart = car.find((productInCart) => productInCart.id === character.id)
+        if (inCart) {
+            setCar(
+                car.map((productInCart) => {
+                    if (productInCart.id === character.id) {
+                        return { ...inCart, amount: inCart.amount + 1 }
+                    } else return productInCart;
+                })
+            )
+        } else {
+            setCar([...car, { ...character, amount: 1 }])
+        }
+    }
+
+    //ver precio total
+
+    const TotalPay = () => {
+        const number = car.reduce((previous, current) =>
+            previous + current.amount * current.price, 0)
+        const makeString = number.toString()
+        const result = makeString.substring(0, 4)
+        return result
+    }
+
+
+    //ver cantidad en el carrito
+    useEffect(() => {
+        setProductsLength(
+            car.reduce((previous, current) => previous + current.amount, 0)
+        )
+    }, [car])
 
     return (
         <AppContext.Provider value={{
@@ -50,11 +69,14 @@ export const AppProvider = ({ children }) => {
             FiltedRedUers,
             setCar,
             car,
-            view,
+            TotalPay,
             setNameCategory,
             nameCategory,
             category,
-
+            createItemShop,
+            productLength,
+            register,
+            setRegister
         }}>
             {children}
         </AppContext.Provider>

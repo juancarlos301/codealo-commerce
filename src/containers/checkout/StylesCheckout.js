@@ -12,9 +12,6 @@ min-height: 80vh;
 
 
 `
-export const ButtonDelete = styled.button`
-cursor: pointer;
-`
 export const CheckoutCon = styled.div`
  grid-template-columns: 3fr 1fr;
   grid-gap: 2rem;
@@ -24,26 +21,13 @@ export const CheckoutCon = styled.div`
   max-width: 80%;
   color: aliceblue;
   margin: 30px 0 ;
-  border: 2px solid ${props => props.darckMode ? '#fff' : '#83868f'};;
+  border: 2px solid ${props => props.darckMode ? '#fff' : '#83868f'};
   padding: 30px;
   border-radius: 10px;
   @media (max-width: 500px) {
   display: flex;
   flex-wrap: wrap;
 }
-`
-export const ItemCheck = styled.div`
-display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0 0 0;
-`
-export const ElementCheck = styled.div`
-display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-bottom: 1px solid ${props => props.darckMode ? '#fff' : '#202124'};
 `
 export const ButtonBar = styled.div`
  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
@@ -70,12 +54,6 @@ export const ButtonBar = styled.div`
     }
 `
 export const H2 = styled.h2`
-color: ${props => props.darckMode ? '#fff' : '#202124'}; 
-`
-export const H4 = styled.h4`
-color: ${props => props.darckMode ? '#fff' : '#202124'}; 
-`
-export const H5 = styled.h5`
 color: ${props => props.darckMode ? '#fff' : '#202124'}; 
 `
 export const H3 = styled.h3`

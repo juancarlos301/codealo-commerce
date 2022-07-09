@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Welcome from '../../components/welcome/Welcome'
 import { AppContext } from "../../context";
 import { Cards } from '../../components/cards/Cards'
-import { v4 as uuidv4 } from 'uuid';
 import ButtonIconShop from "../../components/buttonIconShop/ButtonIconShop";
 // css
 
@@ -10,7 +9,7 @@ import { DivList, DivAllList, H1, DivTitle } from "../../stylesPages/StylesHome"
 
 const Category = () => {
 
-    const { category, nameCategory, darckMode, car, setCar } = useContext(AppContext)
+    const { category, nameCategory, darckMode } = useContext(AppContext)
 
     const FilterCategories = () => {
         if (nameCategory === '') { return category }
@@ -38,10 +37,6 @@ const Category = () => {
 
     const categoriesFoMap = FilterCategories()
 
-    function createItemShop(character) {
-        const newCharacter = { ...character, id: uuidv4() }
-        setCar([...car, newCharacter]);
-    }
 
     return (
         <Welcome>
@@ -59,7 +54,6 @@ const Category = () => {
                             image={character.image?.url}
                             character={character}
                             price={character.price}
-                            createItemShop={createItemShop}
                             category={nameCategory}
                         />))}
                 </DivList>

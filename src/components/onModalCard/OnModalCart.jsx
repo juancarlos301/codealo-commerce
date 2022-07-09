@@ -7,9 +7,9 @@ import {
     ContainerButton, H1, H2, ContainerText, Text, Button
 } from "./StylesOnModalCart";
 
-const OnModalCart = ({ image, name, character, price, createItemShop, HandleModal, category }) => {
+const OnModalCart = ({ image, name, character, price, HandleModal, category }) => {
 
-    const { darckMode } = useContext(AppContext)
+    const { darckMode, createItemShop } = useContext(AppContext)
 
     const base = 'https://codealo-commerce-cms.onrender.com';
 

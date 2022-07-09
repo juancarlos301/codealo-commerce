@@ -1,37 +1,34 @@
 import React, { useContext } from "react";
 import {
-    CheckoutCon, ItemCheck, ButtonBar, ElementCheck,
-    AllContainer, ButtonDelete, H2, H4, H5,
+    CheckoutCon, ButtonBar,
+    AllContainer, H2,
     H3
 } from './StylesCheckout'
 import { Link } from "react-router-dom";
 import Welcome from '../../components/welcome/Welcome'
-import { BsFillTrashFill } from "react-icons/bs";
 import { AppContext } from "../../context";
+import ElementCheckout from "../../components/elementCheckout/ElementCheckout";
 
 const Checkout = () => {
-    const { car, setCar, view, darckMode } = useContext(AppContext)
+    const { car, TotalPay, darckMode } = useContext(AppContext)
 
-    function deleteItemShop(character) {
-        setCar(car.filter(item => item.id !== character.id));
-    }
+
     return (
         <Welcome>
             <AllContainer darckMode={darckMode}>
                 <CheckoutCon darckMode={darckMode} >
                     <div>
                         <H2 darckMode={darckMode}>Order List</H2>
-                        {car.length > 0 ? " " : <h5>You Haven't Orders :(</h5>}
-                        {car.map((character) => (<ItemCheck key={character.id}>
-                            <ElementCheck darckMode={darckMode}>
-                                <H4 darckMode={darckMode}>{character.title}</H4>
-                                <H5 darckMode={darckMode}> {character.price}</H5>
-                            </ElementCheck>
-                            <ButtonDelete type="button" onClick={() => deleteItemShop(character)}><BsFillTrashFill size="25px" /></ButtonDelete>
-                        </ItemCheck>))}
+                        {car.length > 0 ? " " : <H3>You Haven't Orders :(</H3>}
+                        {car.map((character, i) => (
+                            <ElementCheckout
+                                key={i}
+                                character={character}
+                            />
+                        ))}
                     </div>
                     <div>
-                        <H3 darckMode={darckMode}>Total to pay: ${view}</H3>
+                        <H3 darckMode={darckMode}>Total to pay: ${TotalPay()}</H3>
 
 
                         {car.length > 0 ? (<Link to="/checkout/information">

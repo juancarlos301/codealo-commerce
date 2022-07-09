@@ -7,7 +7,8 @@ export const AllContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 60px;
-  background: #202124;
+  background: ${props => props.darckMode ? '#202124' : '#ebebeb'};
+
 `
 export const InformationCon = styled.div`
   grid-template-columns: 3fr 1fr;
@@ -19,9 +20,10 @@ export const InformationCon = styled.div`
   padding: 5px;
   border-radius: 10px;
   min-height: 80vh;
-  background: #202124;
-  border: 2px solid #fff;
-  @media (max-width: 400px) {
+  background-color: #c2e2fd;
+  border: 2px solid ${props => props.darckMode ? '#fff' : '#83868f'};
+
+  @media (max-width: 600px) {
   display: flex;
   flex-wrap: wrap;
   
@@ -32,11 +34,11 @@ export const ConButtons = styled.div`
  display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 80%;
 `
 export const SlideBar = styled.div`
 margin: 10px 0 0 0;
 padding: 20px 15px 20px 0;
-
 
 `
 export const InfoItem = styled.div`
@@ -49,44 +51,34 @@ export const InfoItem = styled.div`
 }
 `
 export const InfoElement = styled.div`
- display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${props => props.darckMode ? '#fff' : '#83868f'};
+  flex-wrap: wrap;
 `
-export const Input = styled.input`
- background-color: #fff;
-  background-image: none;
-  border-radius: 4px;
-  border: 1px solid #d9d9d9;
-  color: rgba(0,0,0,0.75);
-  display: inline-block;
-  font-feature-settings: "tnum";
-  font-size: 14px;
-  height: 32px;
-  line-height: 32px;
-  list-style: none;
-  margin: 0 0 8px 0;
-  outline: 0;
-  padding: 4px 12px;
-  width: 100%;
-  box-sizing: border-box;
-`
+
 export const H2 = styled.h2`
 margin-bottom: 20px;
-color: #fff;
+color: #000;
+
 `
 export const Span = styled.span`
+color: #000;
 
-color: #fff;
 `
 
 export const Title = styled.h4`
-color: #bdbdbd;
+color: #000;
 `
 export const ContainerA = styled.div`
 padding: 20px;
+background-color: #c2e2fd;
+@media (max-width: 500px) {
+  padding: 2px;
+}
+
 `
 export const ButtonBuy = styled.div`
  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
@@ -113,7 +105,7 @@ export const ButtonBuy = styled.div`
 
 export const Linked = styled(Link)`
 text-decoration: none;
-color: beige;
+color: #000;
 &:hover {
   transform: scale(1.2s);
 }

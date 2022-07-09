@@ -6,10 +6,10 @@ import OnModalCart from "../onModalCard/OnModalCart";
 import { Card, Image, DivImage, H3, H2, Button, Span, DivPrice, SpanPrice } from "./StylesCards";
 
 
-export const Cards = ({ name, image, createItemShop, character, price, category }) => {
+export const Cards = ({ name, image, character, price, category }) => {
     const [openModal, setOpenModal] = useState(false)
 
-    const { darckMode } = useContext(AppContext)
+    const { darckMode, createItemShop } = useContext(AppContext)
     const makeDiscount = name.length
     const Price = `${makeDiscount}% off`
 
@@ -53,7 +53,6 @@ export const Cards = ({ name, image, createItemShop, character, price, category 
                         name={name}
                         price={price}
                         character={character}
-                        createItemShop={createItemShop}
                         HandleModal={HandleModal}
                         category={category}
                     />
