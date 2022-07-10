@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Information from "./containers/information/information";
 import Success from "./containers/sucess/Sucess";
 import Category from "./containers/category/Category";
+import OrdersHistory from "./containers/ordersHistory/OrdersHistory";
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
           <Route path="/checkout/information" element={<Information />} />
           <Route path="/checkout/success" element={<Success />} />
           <Route path="/category" element={<Category />} />
+          <Route path="/history" element={<OrdersHistory />} />
+
           <Route element={<NotFound />} />
         </Routes>
       </BrowserRouter>

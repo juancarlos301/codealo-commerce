@@ -7,7 +7,7 @@ import { Input, Button, ConButton, ButtonRegister, Form, H2, ContainerH2, P, Ima
 import Img from '../../assets/user.png'
 const RegisterAndLogin = () => {
 
-    const { setRegister, register } = useContext(AppContext)
+    const { setRegister, register, setJwt } = useContext(AppContext)
 
 
     const [name, setName] = useState('')
@@ -42,6 +42,7 @@ const RegisterAndLogin = () => {
             }
         })
             .then(response => {
+                setJwt(response.data.jwt)
                 setRegister(true)
                 setError(false)
             }).catch(e => {
@@ -64,7 +65,7 @@ const RegisterAndLogin = () => {
             }
         })
             .then(response => {
-                console.log(response.status)
+                setJwt(response.data.jwt)
                 setRegister(true)
                 setError(false)
             }).catch(e => {

@@ -14,10 +14,20 @@ import { AppContext } from "../../context";
 
 const Information = () => {
     const navigate = useNavigate()
-    const { car, TotalPay, register, darckMode } = useContext(AppContext)
+    const { car, TotalPay, register, darckMode, jwt, setLoading } = useContext(AppContext)
 
     const HandleSubmit = () => {
         navigate("/checkout/success")
+
+        if (jwt.length > 0) {
+            setLoading(true)
+            const response = localStorage.getItem('history')
+            const result = JSON.parse(response)
+            const con = car.concat(result)
+            const send = JSON.stringify(con)
+            localStorage.setItem('history', send)
+            setLoading(false)
+        }
     }
 
     return (
@@ -30,7 +40,7 @@ const Information = () => {
                         </div>
                         <ConButtons>
                             <div >
-                                <Linked to="/checkout" darckMode={darckMode}>
+                                <Linked to="/checkout">
                                     To return
                                 </Linked>
                             </div>

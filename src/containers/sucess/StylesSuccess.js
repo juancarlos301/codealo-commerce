@@ -13,7 +13,7 @@ min-height: 80vh;
 animation: ${OpacityAnimation} 0.5s ease-in ;
 `
 export const H2 = styled.h1`
-color: #fff;
+color: #000;
 margin-bottom: 10px;
 `
 export const Span = styled.span`
@@ -32,5 +32,22 @@ justify-content: center;
 export const ConWord = styled.div`
 @media (max-width: 600px) {
     margin: 0 20px;
+}
+`
+export const DivButtonNext = styled.div`
+width: 100%;
+background-color: azure;
+display: flex;
+justify-content: center;
+`
+
+export const ButtonNext = styled.button`
+padding: 10px;
+cursor: pointer;
+&:hover {
+    background-color: aqua;
+    transform: scale(1.04);
+    transition: all 0.5s ease-in-out;
+    border-radius: 20px;
 }
 `

@@ -18,14 +18,14 @@ export const AppProvider = ({ children }) => {
     const [productLength, setProductsLength] = useState(0)
     //states de usuario
     const [register, setRegister] = useState(false)
+    const [jwt, setJwt] = useState('')
+    const [loading, setLoading] = useState(true)
 
     const FiltedRedUers = useMemo(() =>
         characters.filter((user) => {
             return user.title.toLowerCase().includes(search.toLowerCase())
         }),
         [characters, search])
-
-
 
     //carritos
 
@@ -54,7 +54,6 @@ export const AppProvider = ({ children }) => {
         return result
     }
 
-
     //ver cantidad en el carrito
     useEffect(() => {
         setProductsLength(
@@ -76,7 +75,12 @@ export const AppProvider = ({ children }) => {
             createItemShop,
             productLength,
             register,
-            setRegister
+            setRegister,
+            setJwt,
+            jwt,
+            loading,
+            setLoading
+
         }}>
             {children}
         </AppContext.Provider>
